@@ -1,0 +1,89 @@
+.rounded_menu {
+	width: auto;
+	height: 3.75em;
+	border-radius: 1000em;
+	position: relative;
+	white-space: nowrap;
+	display: inline-flex;
+	pointer-events: all;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 10em;
+		border: 1px solid rgba(0, 0, 0, 0.4);
+		will-change: transform;
+	}
+	&:hover {
+		&::before {
+			transform: scaleX(1.05);
+		}
+		li {
+			> span {
+				opacity: 0.6;
+			}
+			> a {
+				opacity: 0.6;
+			}
+		}
+	}
+	&.light {
+		&::before {
+			border-color: rgba(255, 255, 255, 0.4);
+		}
+	}
+	ul {
+		padding: 0 1.094em;
+		position: relative;
+		z-index: 199;
+		li {
+			> span {
+				padding: 1em 1.094em;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			> a {
+				padding: 1em 1.094em;
+				&:not(.active) {
+					opacity: 0.6;
+				}
+				&:hover {
+					opacity: 1;
+				}
+			}
+			&:not(.active) {
+				> span {
+					&:not(.active) {
+						opacity: 0.6;
+					}
+				}
+			}
+		}
+	}
+	a {
+		> svg {
+			width: 1.438em;
+			margin-right: 0.6em;
+		}
+	}
+	.svgAnimated {
+		width: 1.438em;
+		margin-right: 0.6em;
+	}
+	.selected {
+		position: absolute;
+		height: 1px;
+		width: 1em;
+		left: 0;
+		bottom: 0;
+		background: currentColor;
+		margin-left: -0.5em;
+		transform: translateX(0);
+		z-index: 99;
+		will-change: transform;
+	}
+}

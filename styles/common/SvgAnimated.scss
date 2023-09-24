@@ -1,0 +1,13 @@
+.svgAnimated {
+	path {
+		stroke: currentColor;
+		fill: #000;
+	}
+	.fill {
+		.dark {
+			path {
+				fill: #000;
+			}
+		}
+	}
+}

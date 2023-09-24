@@ -1,0 +1,218 @@
+@import "../styles/variables.scss";
+@import "../styles/main.scss";
+@import "../styles/common/StickyNavbar.scss";
+@import "../styles/homepage/ProjectMenuBar.scss";
+@import "../styles/common/RoundedMenuBar.scss";
+@import "../styles/common/DragTip.scss";
+@import "../styles/common/ExpandAndCloseTip.scss";
+@import "../styles/common/MediaGalleryTip.scss";
+@import "../styles/common/Loader.scss";
+@import "../styles/common/Navbar.scss";
+@import "../styles/homepage/HeroSection.scss";
+@import "../styles/common/RoundedBtn.scss";
+@import "../styles/common/CTAButton.scss";
+@import "../styles/developmentspage/ConceptSection.scss";
+@import "../styles//developmentspage/MasterplanSection.scss";
+@import "../styles/developmentspage/PaymentCalc.scss";
+@import "../styles/developmentspage/LocationMap.scss";
+@import "../styles/developmentspage/Gallery.scss";
+@import "../styles/developmentspage/ConstructionUpdates.scss";
+@import "../styles/homepage/CurrentLaunchesSections.scss";
+@import "../styles/homepage/ProjectCard.scss";
+@import "../styles/homepage/ExperienceSection.scss";
+@import "../styles/homepage/EservicesSections.scss";
+@import "../styles/homepage/NewsSection.scss";
+@import "../styles/homepage/PartnersSection.scss";
+@import "../styles/common/Footer.scss";
+@import "../styles/common/SvgAnimated.scss";
+@import "../styles/common/EnquireNow.scss";
+@import "../styles/developmentspage/Banner.scss";
+@import "../styles/developmentspage/PageMenuNav.scss";
+@import "../styles/developmentspage/GalleryPopup.scss";
+@import "../styles/common/SearchFilters.scss";
+@import "../styles/common/SmallBanner.scss";
+//About Page
+@import "../styles/aboutpage/FoundersMessage.scss";
+@import "../styles/aboutpage/OurInspiration.scss";
+@import "../styles/aboutpage/MipTeam.scss";
+@import "../styles/aboutpage/CorporateGovernance.scss";
+@import "../styles/aboutpage/CorporateGovernanceMobile.scss";
+//Sustainability page
+@import "../styles/sustainabilitypage/SustainabilityCoreSection.scss";
+@import "../styles/sustainabilitypage/CsrActivities.scss";
+@import "../styles/sustainabilitypage/CsrActivitiesMobile.scss";
+@import "../styles/sustainabilitypage/Partners.scss";
+@import "../styles/sustainabilitypage/MipBeyondConstruction.scss";
+
+//Inner Sustainability page
+@import "../styles/SustainabilityInnerPage/InnerBanner.scss";
+@import "../styles/SustainabilityInnerPage/BuildingAndRenovation.scss";
+
+//Media Center
+@import "../styles/MediaCenterPage/MediaBanner.scss";
+@import "../styles/MediaCenterPage/News.scss";
+@import "../styles/MediaCenterPage/NewsCard.scss";
+@import "../styles/MediaCenterPage/PressRelease.scss";
+@import "../styles/MediaCenterPage/Events.scss";
+@import "../styles/MediaCenterPage/EventsCard.scss";
+@import "../styles/MediaCenterPage/Gallery.scss";
+@import "../styles/MediaCenterPage/MediaPopup.scss";
+//Article inner
+@import "../styles/articleInnerPage/ArticleInnerBanner.scss";
+@import "../styles/articleInnerPage/ArticleContent.scss";
+
+//Construction Updates
+@import "../styles/constructionUpdatesPage/ConstructionUpdatesCards.scss";
+@import "../styles/constructionUpdatesPage/RecentUpdates.scss";
+@import "../styles/constructionUpdatesPage/ConstructionUpdatesFilters.scss";
+
+//Contact us
+@import "../styles/contactUsPage/ContactUSMobileBanner.scss";
+@import "../styles/contactUsPage/ContactForm.scss";
+@import "../styles/contactUsPage/ContactDetails.scss";
+
+@font-face {
+	font-family: "signature-en";
+	src: url("../public/fonts/Harshita.ttf");
+	font-display: swap;
+}
+@font-face {
+	font-family: "gotham";
+	src: url("../public/fonts/GothamRnd-Medium.otf");
+	font-display: swap;
+}
+
+.signature-en {
+	font-family: "signature-en";
+}
+.gotham {
+	font-family: "gotham";
+}
+
+@keyframes fade-and-slide-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes make-full-width {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes animateDown {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+
+	40% {
+		transform: translate(-50%, 5px);
+	}
+
+	60% {
+		transform: translate(-50%, 3px);
+	}
+}
+
+html {
+	font-size: 16px;
+}
+html,
+body {
+	overscroll-behavior-y: none;
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+	& *::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+body.no-scroll {
+	// position: fixed;
+	overflow: hidden;
+}
+
+// @media (max-width: 375px) {
+// 	h1 {
+// 		font-size: 2.5rem;
+// 	}
+// }
+
+// @media (min-width: 1024px) {
+// 	html {
+// 		font-size: 10px;
+// 	}
+// }
+// @media (min-width: 1025px) and (orientation: landscape) {
+// 	html {
+// 		font-size: 11px;
+// 	}
+// }
+// @media (min-width: 1150px) and (orientation: landscape) {
+// 	html {
+// 		font-size: 10px;
+// 	}
+// }
+// @media (min-width: 1279px) {
+// 	html {
+// 		font-size: 12px;
+// 	}
+// }
+
+// @media (min-width: 1300px) {
+// 	html {
+// 		font-size: 13px;
+// 	}
+// }
+
+// @media (min-width: 1440px) {
+// 	html {
+// 		font-size: 14px;
+// 	}
+// }
+
+// @media (min-width: 1680px) {
+// 	html {
+// 		font-size: 16px;
+// 	}
+// }
+
+// @media (min-width: 1900px) {
+// 	html {
+// 		font-size: 18px;
+// 	}
+// }
+// @media (min-width: 1950px) {
+// 	html {
+// 		font-size: 0.9vw;
+// 	}
+// }
+// @media (min-width: 2559px) {
+// 	html {
+// 		font-size: 0.92vw;
+// 	}
+// }
+// @media (min-width: 3839px) {
+// 	html {
+// 		font-size: 0.97vw;
+// 	}
+// }
+// @media (min-width: 5000px) {
+// 	html {
+// 		font-size: 1vw;
+// 	}
+// }

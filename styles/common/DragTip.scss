@@ -1,0 +1,61 @@
+// .drag_tip {
+// 	position: fixed;
+// 	z-index: 2999;
+// 	width: 6em;
+// 	height: 6em;
+// 	color: #fff;
+// 	pointer-events: none;
+// 	visibility: hidden;
+// 	top: 0;
+// 	left: 0;
+// 	mix-blend-mode: exclusion;
+// 	i {
+// 		svg {
+// 			will-change: transform;
+// 			width: 1em;
+// 			margin: 0 0.3em;
+// 			path {
+// 				stroke-dasharray: 2000;
+// 				stroke-dashoffset: 2000;
+// 			}
+// 		}
+// 	}
+// 	> svg {
+// 		margin: 0 0.3em;
+// 		width: 1em;
+// 	}
+// }
+
+// body.isTouch .drag_tip {
+// 	display: none;
+// }
+.drag_tip {
+	position: fixed;
+	z-index: 2999;
+	width: 6em;
+	height: 6em;
+	color: #fff;
+	pointer-events: none;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	mix-blend-mode: exclusion;
+}
+
+.drag_tip i svg {
+	will-change: transform;
+}
+
+.drag_tip i svg path {
+	stroke-dasharray: 2000;
+	stroke-dashoffset: 2000;
+}
+
+body.isTouch .drag_tip {
+	display: none;
+}
+
+.drag_tip > svg {
+	width: 1em;
+	margin: 0 0.3em;
+}

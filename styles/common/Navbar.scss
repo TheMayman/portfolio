@@ -1,0 +1,29 @@
+header {
+	position: absolute;
+	top: 3.75em;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	.header_wrap {
+		color: #fff;
+		position: relative;
+		height: 3.75em;
+		.main_logo {
+			position: absolute;
+			left: 0;
+			width: 10.625em;
+			svg {
+				width: 10.625em;
+			}
+		}
+	}
+}
+@media (max-width: 960px) {
+	nav,
+	#pageMenu {
+		display: none !important;
+	}
+	header {
+		top: 3em;
+	}
+}

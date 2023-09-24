@@ -1,0 +1,42 @@
+/* Loader */
+.site_loader {
+	position: fixed;
+	width: 100%;
+	z-index: 999999;
+	.loader_icon {
+		width: 1.5em;
+		position: absolute;
+		bottom: 5em;
+		z-index: 299;
+		color: #ddd;
+	}
+	.loader_logo {
+		width: 11em;
+		position: relative;
+		z-index: 199;
+	}
+	.loader_text {
+		width: 14em;
+		margin-top: 2em;
+		position: relative;
+		z-index: 199;
+	}
+	.loader_bg {
+		transform-origin: 0 0;
+		backface-visibility: hidden;
+		will-change: transform;
+	}
+	.bg_a {
+		background: #f5f5f5;
+		z-index: 99;
+	}
+
+	.bg_b {
+		background: #000;
+	}
+}
+
+.loader_count {
+	position: relative;
+	z-index: 99;
+}
