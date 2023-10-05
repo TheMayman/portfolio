@@ -11,6 +11,9 @@ import useGsapContext from "./useGsapContext"
 const NavMenu = ({ data }) => {
 	const { isMobile } = useContext(isMobileContext)
 	const naveMenuWrapper = useRef()
+	const linksRef = useRef()
+	const linkRef = useRef([])
+	const menuCardsRef = useRef([])
 	const ctx = useGsapContext(naveMenuWrapper)
 
 	useEffect(() => {
@@ -23,10 +26,10 @@ const NavMenu = ({ data }) => {
 		// let headerWrap = document.querySelector(".header_wrap")
 		// if (headerWrap && headerWrap.length != 0) {
 		let burgerButton = document.querySelector(".burger_button"),
-			menuWrap = document.querySelector(".menu_wrap"),
-			menuCards = document.querySelector(".menu_cards"),
-			linksWrap = document.querySelector(".links"),
-			links = document.querySelectorAll(".links a"),
+			menuWrap = naveMenuWrapper.current,
+			menuCards = menuCardsRef,
+			linksWrap = linksRef.current,
+			links = linkRef.current,
 			mouse = { x: 0, y: 0 }
 
 		let burgerTL = new gsap.timeline({ paused: false }),
@@ -94,20 +97,20 @@ const NavMenu = ({ data }) => {
 				let cardHeight = menuCards.offsetHeight,
 					getIndex = Array.from(links).indexOf(e)
 
-				gsap.to(".menu_cards_animation", 0.5, {
+				gsap.to(".menu_cards_animation", {
+					duration: 0.5,
 					y: cardHeight * getIndex * -1,
 					ease: "power3.out",
 				})
 			})
 		})
 
-		menuWrap.addEventListener("mousemove", function () {
+		menuWrap.addEventListener("mousemove", function (e) {
 			let rect = menuWrap.getBoundingClientRect()
+			mouse.x = e.clientX - rect.left
+			mouse.y = e.clientY - rect.top
 
-			mouse.x = event.clientX - rect.left
-			mouse.y = event.clientY - rect.top
-
-			gsap.to(".menu_cards", 0.2, { x: mouse.x, y: mouse.y })
+			gsap.to(".menu_cards", { duration: 0.2, x: mouse.x, y: mouse.y })
 		})
 
 		// burgerButton.addEventListener("click", function () {
@@ -133,14 +136,14 @@ const NavMenu = ({ data }) => {
 					document?.documentElement?.classList?.remove("fixed-body")
 				}
 
-				gsap.to(".menu_cards", 0.2, { autoAlpha: 0 })
+				gsap.to(".menu_cards", { duration: 0.2, autoAlpha: 0 })
 			}
 		}
 	}
 	return (
 		<div className="menu_wrap light_color f a-c j-c" ref={naveMenuWrapper}>
 			<i className="full_bg primary_bg"></i>
-			<div className="menu_cards">
+			<div className="menu_cards" ref={menuCardsRef}>
 				<div className="menu_cards_animation">
 					<div className="menu_card" key={1}>
 						<Image src={"/images/crashDummies.webp"} alt="img" fill />
@@ -151,9 +154,23 @@ const NavMenu = ({ data }) => {
 				</div>
 			</div>
 
-			<div className="links">
-				<Link href="/">Home</Link>
-				<Link href="/about-us">About us</Link>
+			<div className="links" ref={linksRef}>
+				<Link
+					href="/"
+					ref={(ref) => {
+						linkRef.current[0] = ref
+					}}
+				>
+					Home
+				</Link>
+				<Link
+					href="/about-us"
+					ref={(ref) => {
+						linkRef.current[1] = ref
+					}}
+				>
+					About us
+				</Link>
 			</div>
 		</div>
 	)
