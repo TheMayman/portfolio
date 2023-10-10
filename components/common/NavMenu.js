@@ -26,7 +26,6 @@ const NavMenu = () => {
 	]
 
 	useEffect(() => {
-		console.log(menuCardsRef.current.offsetHeight, "height=")
 		ctx.add(() => {
 			cardsTL.current = new gsap.timeline({ paused: true })
 			burgerTL.current = new gsap.timeline({ paused: true })
@@ -53,30 +52,6 @@ const NavMenu = () => {
 					{ y: "0%", autoAlpha: 1, stagger: 0.1, ease: "power3.out" },
 					// 0.5
 					0.7
-				)
-				.fromTo(
-					".on",
-					0.5,
-					{ autoAlpha: 1 },
-					{ autoAlpha: 0, ease: "power3.in" },
-					0
-				)
-
-				.fromTo(
-					".off",
-					0.5,
-					{ autoAlpha: 0 },
-					{
-						autoAlpha: 1,
-						ease: "power3.out",
-						onComplete: () => {
-							if (isMobile) {
-								document.body.classList.add("fixed-body")
-								document?.documentElement?.classList?.add("fixed-body")
-							}
-						},
-					},
-					0.5
 				)
 		})
 		return () => ctx.revert()
