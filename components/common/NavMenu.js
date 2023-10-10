@@ -79,7 +79,10 @@ const NavMenu = () => {
 					handleMenuWrapMouseMove(e)
 				}}
 			>
-				<i className="full_bg primary_bg"></i>
+				<i
+					className="full_bg primary_bg"
+					style={{ backgroundColor: "white" }}
+				></i>
 				<div className="menu_cards" ref={menuCardsRef}>
 					<div className="menu_cards_animation" ref={menuCardsAnimationRef}>
 						<div className="menu_card" key={1}>
