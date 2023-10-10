@@ -2,6 +2,7 @@ import getQueryClient from "@/utils/getQueryClient"
 import { Hydrate, dehydrate } from "@tanstack/react-query"
 
 import NavMenu from "@/components/common/NavMenu"
+import Navbar from "@/components/common/Navbar"
 
 async function getUser() {
 	const res = await fetch(
