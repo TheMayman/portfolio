@@ -2,6 +2,7 @@
 import gsap from "gsap"
 import { Divide as Hamburger } from "hamburger-react"
 import { useState } from "react"
+import Magnitizer from "./Magnitizer"
 const Navbar = ({ burgerTL, menuCardsRef }) => {
 	const [isOpen, setOpen] = useState(false)
 	const handleMenuToggle = () => {
@@ -14,20 +15,21 @@ const Navbar = ({ burgerTL, menuCardsRef }) => {
 	}
 	return (
 		<>
-			<div
-				className=""
-				style={{
-					width: "2rem",
-					height: "2rem",
-					zIndex: "1000",
-					position: "relative",
-					cursor: "pointer",
-					color: "#a09160",
-				}}
-				onClick={() => handleMenuToggle()}
-			>
-				<Hamburger toggled={isOpen} toggle={setOpen} />
-			</div>
+			<Magnitizer customClass={""}>
+				<div
+					className=""
+					style={{
+						zIndex: "1000",
+						position: "relative",
+						cursor: "pointer",
+						color: "#a09160",
+						padding: "3rem",
+					}}
+					onClick={() => handleMenuToggle()}
+				>
+					<Hamburger toggled={isOpen} toggle={setOpen} />
+				</div>
+			</Magnitizer>
 		</>
 	)
 }
