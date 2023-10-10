@@ -13,7 +13,6 @@ const NavMenu = ({ data }) => {
 	const naveMenuWrapper = useRef()
 	const linksRef = useRef()
 	const linkRef = useRef([])
-	const menuCardsRef = useRef([])
 	const ctx = useGsapContext(naveMenuWrapper)
 
 	useEffect(() => {
@@ -27,7 +26,7 @@ const NavMenu = ({ data }) => {
 		// if (headerWrap && headerWrap.length != 0) {
 		let burgerButton = document.querySelector(".burger_button"),
 			menuWrap = naveMenuWrapper.current,
-			menuCards = menuCardsRef,
+			menuCards = document.querySelector(".menu_cards"),
 			linksWrap = linksRef.current,
 			links = linkRef.current,
 			mouse = { x: 0, y: 0 }
@@ -97,8 +96,8 @@ const NavMenu = ({ data }) => {
 				let cardHeight = menuCards.offsetHeight,
 					getIndex = Array.from(links).indexOf(e)
 
-				gsap.to(".menu_cards_animation", {
-					duration: 0.5,
+				gsap.to(".menu_cards_animation",{
+					duration: 0.5, 
 					y: cardHeight * getIndex * -1,
 					ease: "power3.out",
 				})
@@ -143,7 +142,7 @@ const NavMenu = ({ data }) => {
 	return (
 		<div className="menu_wrap light_color f a-c j-c" ref={naveMenuWrapper}>
 			<i className="full_bg primary_bg"></i>
-			<div className="menu_cards" ref={menuCardsRef}>
+			<div className="menu_cards">
 				<div className="menu_cards_animation">
 					<div className="menu_card" key={1}>
 						<Image src={"/images/crashDummies.webp"} alt="img" fill />
