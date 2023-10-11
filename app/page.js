@@ -3,6 +3,7 @@ import { Hydrate, dehydrate } from "@tanstack/react-query"
 
 import NavMenu from "@/components/common/NavMenu"
 import Navbar from "@/components/common/Navbar"
+import Introduction from "@/components/Introduction"
 
 async function getUser() {
 	const res = await fetch(
@@ -19,6 +20,7 @@ export default async function Home() {
 	return (
 		<Hydrate state={dehydratedState}>
 			<NavMenu />
+			<Introduction />
 		</Hydrate>
 	)
 }

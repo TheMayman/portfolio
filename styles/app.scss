@@ -2,6 +2,7 @@
 @import "../styles/main.scss";
 @import "../styles/common/NavMenu.scss";
 @import "../styles/common/Navbar.scss";
+@import "../styles/common/Introduction.scss";
 
 // @font-face {
 // 	font-family: "signature-en";
@@ -58,9 +59,14 @@ body {
 	scroll-behavior: smooth;
 	font-family: var(--font-oswald);
 	min-height: 200vh;
+	color: #fff;
 	& *::-webkit-scrollbar {
 		display: none;
 	}
+}
+
+body {
+	padding: 8rem 0rem;
 }
 
 body.no-scroll {

@@ -11,7 +11,7 @@ const Navbar = ({ burgerTL, menuCardsRef }) => {
 	const scrollYTimeoutRef = useRef()
 	const headerRef = useRef()
 
-	let start = 100
+	let start = 50
 
 	const handleMenuToggle = () => {
 		if (isOpen) {
