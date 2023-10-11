@@ -1,16 +1,15 @@
 import Providers from "@/utils/providers"
-// import localFont from "next/font/local"
+import { Oswald } from "next/font/google"
 import "../styles/app.scss"
 import { Description, Name } from "@/components/common/Variables"
 
-// const suisseIntlbook = localFont({
-// 	src: [
-// 		{ path: "../public/fonts/suisseintl-book-webfont.woff2" },
-// 		{ path: "../public/fonts/suisseintl-book-webfont.woff" },
-// 		// "../public/fonts/suisseintl-book-webfont.woff2",
-// 	],
-// 	variable: "--suisse_intlbook",
-// })
+const oswald = Oswald({
+	weight: ["200", "300", "400"],
+	display: "swap",
+	subsets: ["latin"],
+	variable: "--font-oswald",
+})
+
 export const metadata = {
 	title: Name,
 	description: Description,
@@ -21,10 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html
-			lang="en"
-			// className={`${suisseIntlbook.variable} `}
-		>
+		<html lang="en" className={`${oswald.variable}`}>
 			<head />
 			<body suppressHydrationWarning={true}>
 				<Providers>{children}</Providers>

@@ -1,6 +1,6 @@
 .menu_wrap {
-	position: absolute;
-	z-index: 199;
+	position: fixed;
+	z-index: 100;
 	top: -2rem;
 	// height: calc(var(--vh, 1vh)*102);
 	height: 100vh;
@@ -18,7 +18,7 @@
 		z-index: 1;
 		a {
 			font-size: 1.75rem;
-			font-family: "medium";
+			font-weight: 400;
 			letter-spacing: -0.025rem;
 			padding: 0.4rem 0;
 			position: relative;

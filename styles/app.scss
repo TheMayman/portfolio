@@ -1,14 +1,13 @@
 @import "../styles/variables.scss";
 @import "../styles/main.scss";
 @import "../styles/common/NavMenu.scss";
-
+@import "../styles/common/Navbar.scss";
 
 // @font-face {
 // 	font-family: "signature-en";
 // 	src: url("../public/fonts/Harshita.ttf");
 // 	font-display: swap;
 // }
-
 
 @keyframes fade-and-slide-in {
 	from {
@@ -57,6 +56,8 @@ body {
 	overscroll-behavior-y: none;
 	-webkit-overflow-scrolling: touch;
 	scroll-behavior: smooth;
+	font-family: var(--font-oswald);
+	min-height: 200vh;
 	& *::-webkit-scrollbar {
 		display: none;
 	}
