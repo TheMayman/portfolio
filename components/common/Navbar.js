@@ -1,24 +1,28 @@
 "use client"
 import gsap from "gsap"
 import { Divide as Hamburger } from "hamburger-react"
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import Magnitizer from "./Magnitizer"
 import Image from "next/image"
 import Link from "next/link"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
+import { smootherRefContext } from "@/contexts/SmootherRefContext"
 const Navbar = ({ burgerTL, menuCardsRef }) => {
+	const { smootherRef, setSmootherState } = useContext(smootherRefContext)
 	const [isOpen, setOpen] = useState(false)
 	const scrollYTimeoutRef = useRef()
 	const headerRef = useRef()
 
 	let start = 50
 
-	const handleMenuToggle = () => {
-		if (isOpen) {
-			burgerTL.current.reverse()
-			gsap.to(menuCardsRef.current, { duration: 0.2, autoAlpha: 0 })
-		} else {
+	const handleMenuToggle = (toggled) => {
+		if (toggled) {
 			burgerTL.current.play()
+			smootherRef.current.paused(true)
+		} else {
+			smootherRef.current.paused(false)
+			gsap.to(menuCardsRef.current, { duration: 0.2, autoAlpha: 0 })
+			burgerTL.current.reverse()
 		}
 	}
 	useEffect(() => {
@@ -57,8 +61,12 @@ const Navbar = ({ burgerTL, menuCardsRef }) => {
 				</Link>
 			</Magnitizer>
 			<Magnitizer customClass={"burger-magintizer"}>
-				<div className="burger-container" onClick={() => handleMenuToggle()}>
-					<Hamburger toggled={isOpen} toggle={setOpen} />
+				<div className="burger-container">
+					<Hamburger
+						onToggle={(toggled) => {
+							handleMenuToggle(toggled)
+						}}
+					/>
 				</div>
 			</Magnitizer>
 		</header>

@@ -180,6 +180,8 @@ const FadeIn = ({
 		}
 		if (q("._splitWrap").length != 0) {
 			tl.set(q("._splitLines"), { autoAlpha: 1 }, 0)
+			console.log(split1,"split");
+			console.log(split2,"split22");
 			tl.fromTo(
 				split2,
 				{ y: 30, autoAlpha: 0 },
@@ -304,7 +306,7 @@ const FadeIn = ({
 			split1.revert()
 			q("._mask").forEach((element) => element.classList.remove("_mask"))
 		}
-		tl.eventCallback("onComplete", handleReset)
+		// tl.eventCallback("onComplete", handleReset)
 
 		// return () => ctx.revert()
 	}, [eleYValue, heroSliderAnimationDone, onLoad, splitType])

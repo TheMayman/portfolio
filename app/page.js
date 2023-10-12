@@ -2,8 +2,10 @@ import getQueryClient from "@/utils/getQueryClient"
 import { Hydrate, dehydrate } from "@tanstack/react-query"
 
 import NavMenu from "@/components/common/NavMenu"
-import Navbar from "@/components/common/Navbar"
 import Introduction from "@/components/Introduction"
+import Cursor from "@/components/common/Cursor"
+import ScrollSmootherContainer from "@/components/common/ScrollSmootherContainer"
+import SmootherRefProvider from "@/contexts/SmootherRefContext"
 
 async function getUser() {
 	const res = await fetch(
@@ -19,8 +21,21 @@ export default async function Home() {
 
 	return (
 		<Hydrate state={dehydratedState}>
-			<NavMenu />
-			<Introduction />
+			<Cursor />
+			<SmootherRefProvider>
+					<NavMenu />
+				<ScrollSmootherContainer>
+					<div
+						className="height"
+						style={{
+							minHeight: "200vh",
+							width: "100%",
+							backgroundColor: "darkgrey",
+						}}
+					></div>
+					<Introduction />
+				</ScrollSmootherContainer>
+			</SmootherRefProvider>
 		</Hydrate>
 	)
 }

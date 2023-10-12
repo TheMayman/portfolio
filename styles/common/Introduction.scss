@@ -11,10 +11,13 @@
 	}
 	.left {
 		// background-color: red;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		.line-1 {
-			position: relative;
-			top: 50%;
-			width: 20rem;
+			// position: relative;
+			// top: 50%;
+			// width: 20rem;
 			margin: 0 auto;
 			border-right: 2px solid rgba(255, 255, 255, 0.75);
 			font-size: 5rem;
