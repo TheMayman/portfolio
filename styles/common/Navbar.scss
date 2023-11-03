@@ -12,8 +12,10 @@ header {
 	z-index: 101;
 	height: 7rem;
 	&.sticky {
-		background-color: #fff;
 		padding: 1rem;
+		.burger-container {
+			background-color: #fff;
+		}
 	}
 	.logo-container {
 		width: 10%;
@@ -31,6 +33,11 @@ header {
 		z-index: 100;
 		cursor: pointer;
 		color: #a09160;
+		border-radius: 50%;
+		padding: 1rem;
+		// box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+		transition: .3s all;
 	}
 	.burger-magintizer,
 	.logo-container {

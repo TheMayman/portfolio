@@ -3,6 +3,8 @@
 @import "../styles/common/NavMenu.scss";
 @import "../styles/common/Navbar.scss";
 @import "../styles/common/Introduction.scss";
+@import "../styles/common/ProgrammingLanguages.scss";
+@import "../styles/common/Headline.scss";
 
 // @font-face {
 // 	font-family: "signature-en";
@@ -75,14 +77,41 @@ body.no-scroll {
 }
 
 .cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background-color: #a09160;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #a09160;
 	z-index: 99;
+}
+
+.p-2 {
+	padding: 2rem;
+}
+
+.pl-4 {
+	padding-left: 4rem;
+}
+
+.pl-6 {
+	padding-left: 6rem;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+.loading {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #111;
 }
 
 // @media (max-width: 375px) {

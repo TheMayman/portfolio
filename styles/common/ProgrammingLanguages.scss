@@ -1,0 +1,19 @@
+.strap {
+  display: flex;
+  height: 15vh;
+  background-color: #fff;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  width: 100%;
+  .lang {
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    img {
+      width: 7rem;
+    }
+  }
+}

@@ -110,8 +110,8 @@ svg {
 	display: block;
 }
 
-#smooth-content {
-	// will-change: transform;
+.p-relative {
+	position: relative;
 }
 /* Transitions */
 body:not(.progress) ._underline:before,
