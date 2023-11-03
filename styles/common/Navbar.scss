@@ -10,6 +10,7 @@ header {
 	padding: 2rem;
 	transition: cubic-bezier(0.165, 0.84, 0.44, 1) .7s all;
 	z-index: 101;
+	height: 7rem;
 	&.sticky {
 		background-color: #fff;
 		padding: 1rem;

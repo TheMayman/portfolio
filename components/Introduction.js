@@ -1,64 +1,42 @@
 "use client"
-import gsap, { SteppedEase } from "gsap"
+import gsap from "gsap"
+import SplitText from "gsap/dist/SplitText"
 import { useEffect, useRef } from "react"
 import FadeIn from "./common/FadeIn"
 
 const Introduction = () => {
-	const typeWriterRef = useRef()
+	const headlineRef = useRef()
+	gsap.registerPlugin(SplitText)
 
-	// useEffect(() => {
-	// 	var tl = new gsap.timeline({
-	// 		paused: true,
-	// 	})
+	useEffect(() => {
+		let q = gsap.utils.selector(headlineRef)
+		let tl = new gsap.timeline({
+			paused: true,
+		})
+		// console.log(headlineRef);
 
-	// 	tl.fromTo(
-	// 		typeWriterRef.current,
-	// 		8,
-	// 		{
-	// 			width: "0",
-	// 		},
-	// 		{
-	// 			width: "20rem" /* same as CSS .line-1 width */,
-	// 			ease: SteppedEase.config(18),
-	// 		},
-	// 		0
-	// 	)
-	// 	// text cursor animation
-	// 	tl.fromTo(
-	// 		typeWriterRef.current,
-	// 		0.7,
-	// 		{
-	// 			"border-right-color": "rgba(255,255,255,0.75)",
-	// 		},
-	// 		{
-	// 			"border-right-color": "rgba(255,255,255,0)",
-	// 			repeat: -1,
-	// 			ease: SteppedEase.config(18),
-	// 		},
-	// 		0
-	// 	)
+		const headline = SplitText.create(headlineRef.current, {
+			type: "chars",
+			charsClass: "headline-character",
+		})
 
+		tl.to(headline.chars, {
+			y: 0,
+			stagger: 0.05,
+			delay: 0.2,
+			duration: 0.3,
+			ease: "power3.our",
+		})
+	}, [])
 	// 	tl.play()
 	// }, [])
 
 	return (
 		<section className="introduction-section">
 			<div className="left">
-				<FadeIn splitType={"lines"}>
-					{/* <div className="_eleWrap"> */}
-						<div className="_splitWrap">
-							<p
-								className="line-1 anim-typewriter _splitLines"
-								ref={typeWriterRef}
-							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, consectetur nemo non vitae labore assumenda aperiam fuga sequi quos exercitationem enim aut. Error laborum similique provident sunt pariatur a obcaecati.
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, consectetur nemo non vitae labore assumenda aperiam fuga sequi quos exercitationem enim aut. Error laborum similique provident sunt pariatur a obcaecati.
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, consectetur nemo non vitae labore assumenda aperiam fuga sequi quos exercitationem enim aut. Error laborum similique provident sunt pariatur a obcaecati.
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, consectetur nemo non vitae labore assumenda aperiam fuga sequi quos exercitationem enim aut. Error laborum similique provident sunt pariatur a obcaecati.
-							</p>
-						</div>
-					{/* </div> */}
-				</FadeIn>
+				<p className="headline" ref={headlineRef}>
+					Hi, I&apos;m Eyad
+				</p>
 			</div>
 			<div className="right"></div>
 		</section>
