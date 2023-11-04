@@ -5,12 +5,13 @@
 @import "../styles/common/Introduction.scss";
 @import "../styles/common/ProgrammingLanguages.scss";
 @import "../styles/common/Headline.scss";
+@import "../styles/common/ScrollMe.scss";
 
-// @font-face {
-// 	font-family: "signature-en";
-// 	src: url("../public/fonts/Harshita.ttf");
-// 	font-display: swap;
-// }
+@font-face {
+	font-family: "headline";
+	src: url("../public/fonts/headline.ttf");
+	font-display: swap;
+}
 
 @keyframes fade-and-slide-in {
 	from {
@@ -70,10 +71,26 @@ body {
 body {
 	padding: 7rem 0rem;
 }
+h1,h2,h3,h4,h5 {
+	font-family: "headline";
+}
+
+p {
+	font-family: var(--font-oswald);
+}
+
+a {
+	font-family: "headline";
+}
 
 body.no-scroll {
 	// position: fixed;
 	overflow: hidden;
+}
+
+section {
+	min-height: calc(100vh - 7rem);
+	padding: 4rem 0;
 }
 
 .cursor {

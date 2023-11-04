@@ -7,7 +7,6 @@ import Cursor from "@/components/common/Cursor"
 import ScrollSmootherContainer from "@/components/common/ScrollSmootherContainer"
 import SmootherRefProvider from "@/contexts/SmootherRefContext"
 import ProgrammingLanguages from "@/components/common/ProgrammingLanguages"
-import Headline from "@/components/common/Headline"
 
 async function getUser() {
 	const res = await fetch(
@@ -28,7 +27,6 @@ export default async function Home() {
 				<NavMenu />
 				<ScrollSmootherContainer>
 					<Introduction />
-					<Headline text={"Skills"} />
 					<ProgrammingLanguages />
 				</ScrollSmootherContainer>
 			</SmootherRefProvider>

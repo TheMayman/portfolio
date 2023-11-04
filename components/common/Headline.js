@@ -3,29 +3,27 @@ import gsap from "gsap"
 import { useEffect, useRef } from "react"
 const Headline = ({ text }) => {
 	const titleRef = useRef()
+	const intervalRef = useRef()
 
 	useEffect(() => {
-		function animateText() {
-			const text = titleRef.current
+		function animate(element) {
+			let elementWidth = element.offsetWidth
+			let parentWidth = element.parentElement.offsetWidth
+			let flag = 0
 
-			// Calculate the duration based on the text width and animation speed
-			const textWidth = text.clientWidth
-			const animationSpeed = 100 // Adjust the speed as needed
-			const duration = textWidth / animationSpeed
+			intervalRef.current = setInterval(() => {
+				element.style.marginLeft = --flag + "px"
 
-			// Create the animation
-			gsap.to(text, {
-				x: textWidth, // Move the text to the left
-				duration: duration,
-				ease: "linear",
-				onComplete: () => {
-					// When the animation is complete, reset the position
-					gsap.set(text, { x: "100%" })
-					animateText() // Restart the animation
-				},
-			})
+				if (elementWidth == -flag) {
+					flag = parentWidth
+				}
+			}, 10)
 		}
-		animateText()
+
+		animate(titleRef.current)
+		return () => {
+			clearInterval(intervalRef.current)
+		}
 	}, [])
 
 	return (

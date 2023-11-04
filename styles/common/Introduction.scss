@@ -1,9 +1,9 @@
 .introduction-section {
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: calc(100vh - 7rem);
 	margin-top: 7rem;
 	.left,
 	.right {
@@ -15,12 +15,14 @@
 		align-items: center;
 		justify-content: flex-start;
 		.headline {
-			width: 80%;
+			width: 100%;
 			.headline-title {
-				font-size: 5rem;
+				font-size: 7rem;
 				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 				line-height: 7rem;
 				margin-bottom: 2rem;
+
+				// color: #a09160;
 				.headline-character {
 					transform: translateY(115px);
 					transition: transform 0.5s;
@@ -28,7 +30,8 @@
 			}
 			.headline-description {
 				overflow: hidden;
-				line-height: 1.6rem;
+				line-height: 2rem;
+				width: 80%;
 				.headline-word {
 					transform: translateY(175px);
 					transition: transform 0.5s;

@@ -6,53 +6,58 @@ import { useEffect, useRef, useState } from "react"
 import Lottie from "lottie-react"
 import programmerAnimation from "../public/json/programmer.json"
 import FadeIn from "./common/FadeIn"
+import ScrollMe from "./common/Scrollme"
+import useGsapContext from "./common/useGsapContext"
 
 const Introduction = () => {
 	const introRef = useRef()
 	const [isLoading, setIsLoading] = useState(true)
 	gsap.registerPlugin(SplitText, ScrollTrigger)
+	const ctx = useGsapContext(introRef)
 
 	useEffect(() => {
 		setIsLoading(false)
-		const q = gsap.utils.selector(introRef)
+		ctx.add(() => {
+			let tl = new gsap.timeline()
 
-		let tl = new gsap.timeline({
-			paused: true,
-		})
+			const headline = SplitText.create(".headline-title", {
+				type: "chars",
+				charsClass: "headline-character",
+			})
 
-		const headline = SplitText.create(q(".headline-title"), {
-			type: "chars",
-			charsClass: "headline-character",
-		})
+			const description = SplitText.create(".headline-description", {
+				type: "words",
+				wordsClass: "headline-word",
+			})
 
-		const description = SplitText.create(q(".headline-description"), {
-			type: "words",
-			wordsClass: "headline-word",
-		})
-
-		tl.to(headline.chars, {
-			y: 0,
-			stagger: 0.05,
-			delay: 0.5,
-			duration: 0.3,
-			ease: "power3.out",
-		})
-			.to(description.words, {
+			tl.to(headline.chars, {
 				y: 0,
-				stagger: 0.016,
-				delay: 0.1,
+				stagger: 0.05,
+				delay: 0.5,
 				duration: 0.3,
 				ease: "power3.out",
 			})
-			.to(q(".lottie-programmer"), {
-				autoAlpha: 1,
-				delay: 0.15,
-				duration: 1,
-				ease: "power3.in",
-			})
+				.to(description.words, {
+					y: 0,
+					stagger: 0.016,
+					delay: 0.1,
+					duration: 0.3,
+					ease: "power3.out",
+				})
+				.to(".lottie-programmer", {
+					autoAlpha: 1,
+					delay: 0.15,
+					duration: 1,
+					ease: "power3.in",
+				})
+		})
+
+		return () => {
+			ctx.revert()
+		}
 
 		// ScrollTrigger.create({
-		// 	trigger: q(".headline-title"),
+		// 	trigger: (".headline-title"),
 		// 	animation: tl,
 		// 	start: "top bottom",
 		// 	end: "bottom bottom",
@@ -60,7 +65,7 @@ const Introduction = () => {
 		// 	smoothChildTiming: true,
 		// })
 		// ScrollTrigger.create({
-		// 	trigger: q(".lottie-programmer"),
+		// 	trigger: (".lottie-programmer"),
 		// 	animation: tl,
 		// 	start: "top bottom",
 		// 	end: "bottom bottom",
@@ -68,23 +73,22 @@ const Introduction = () => {
 		// 	smoothChildTiming: true,
 		// 	scrub: true,
 		// })
-		tl.play()
-	}, [])
+	}, [ctx])
 
 	return (
 		<section className="introduction-section" ref={introRef}>
 			<div className="left pl-6">
 				<div className="headline">
-					<div className="headline-title">Hi,</div>
-					<div className="headline-title">I&apos;m Eyad Alasfahani</div>
+					<h2 className="headline-title">Hi,</h2>
+					<h2 className="headline-title">I&apos;m Eyad Alasfahani</h2>
 					<p className="headline-description">
 						A passionate web developer specializing in creating dynamic web
 						applications from scratch. With expertise in both frontend and
 						backend development, I leverage technologies like Next.js for
 						frontend and PHP Laravel for backend to craft captivating and
 						customer-centric web solutions. My goal is to help agencies and
-						companies enhance their online presence, attract a wider audience,
-						and deliver exceptional user experiences.
+						companies enhance their online presence, <br /> attract a wider
+						audience, and deliver exceptional user experiences.
 					</p>
 				</div>
 			</div>
@@ -96,6 +100,7 @@ const Introduction = () => {
 					/>
 				</div>
 			</div>
+			<ScrollMe />
 		</section>
 	)
 }
