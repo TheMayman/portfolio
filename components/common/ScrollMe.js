@@ -1,8 +1,11 @@
+import Lottie from "lottie-react"
+import scroll from "../../public/json/scroll-down.json"
+
 const ScrollMe = () => {
 	return (
-		<div className="scroll-me">
-			{/* <p>Scroll</p> */}
-		</div>
+		<>
+			<Lottie className="scroll-me" animationData={scroll} />
+		</>
 	)
 }
 

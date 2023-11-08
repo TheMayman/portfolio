@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react"
 import Lottie from "lottie-react"
 import programmerAnimation from "../public/json/programmer.json"
 import FadeIn from "./common/FadeIn"
-import ScrollMe from "./common/Scrollme"
 import useGsapContext from "./common/useGsapContext"
+import ScrollMe from "./common/ScrollMe"
 
 const Introduction = () => {
 	const introRef = useRef()
@@ -45,6 +45,12 @@ const Introduction = () => {
 					ease: "power3.out",
 				})
 				.to(".lottie-programmer", {
+					autoAlpha: 1,
+					delay: 0.15,
+					duration: 1,
+					ease: "power3.in",
+				})
+				.to(".scroll-me", {
 					autoAlpha: 1,
 					delay: 0.15,
 					duration: 1,
