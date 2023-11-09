@@ -1,0 +1,12 @@
+.portfolio {
+	.card {
+		height: calc(80vh - 7rem);
+		background-color: red;
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100);
+	}
+}

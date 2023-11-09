@@ -32,6 +32,10 @@ const Cursor = () => {
 			mouseX = e.clientX
 			mouseY = e.clientY
 		})
+
+		// return () => {
+		// 	document.removeEventListener("mousemove")
+		// }
 	}, [])
 	return (
 		<div>

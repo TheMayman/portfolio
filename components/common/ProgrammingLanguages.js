@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import { useEffect, useRef } from "react"
 import useGsapContext from "./useGsapContext"
 import Headline from "./Headline"
+import { Tooltip } from "react-tooltip"
 
 const ProgrammingLanguages = () => {
 	const containerRef = useRef()
@@ -40,7 +41,7 @@ const ProgrammingLanguages = () => {
 
 	return (
 		<>
-			<section className="height p-relative" ref={containerRef}>
+			<section className=" p-relative" ref={containerRef}>
 				<Headline text={"Skills"} />
 				<div className="strap">
 					<div className="lang">
@@ -48,8 +49,11 @@ const ProgrammingLanguages = () => {
 							src={"/icons/nextJs.svg"}
 							width={100}
 							height={100}
+							data-tooltip-id="my-tooltip"
+							data-tooltip-content="Hello world!"
 							alt="NextJs"
 						/>
+						<Tooltip id="my-tooltip" />
 					</div>
 					<div className="lang">
 						<Image
@@ -133,7 +137,6 @@ const ProgrammingLanguages = () => {
 					</div>
 				</div>
 			</section>
-			<section></section>
 		</>
 	)
 }

@@ -7,6 +7,8 @@ import Cursor from "@/components/common/Cursor"
 import ScrollSmootherContainer from "@/components/common/ScrollSmootherContainer"
 import SmootherRefProvider from "@/contexts/SmootherRefContext"
 import ProgrammingLanguages from "@/components/common/ProgrammingLanguages"
+import Portfolio from "@/components/common/Portfolio"
+import Loading from "@/components/common/Loading"
 
 async function getUser() {
 	const res = await fetch(
@@ -23,11 +25,13 @@ export default async function Home() {
 	return (
 		<Hydrate state={dehydratedState}>
 			<Cursor />
+			<Loading />
 			<SmootherRefProvider>
 				<NavMenu />
 				<ScrollSmootherContainer>
 					<Introduction />
 					<ProgrammingLanguages />
+					<Portfolio />
 				</ScrollSmootherContainer>
 			</SmootherRefProvider>
 		</Hydrate>
