@@ -32,7 +32,7 @@
 	.menu_cards {
 		position: absolute;
 		z-index: 399;
-		border-radius: $cards-border-radius-mobile;
+		border-radius: .5rem;
 		overflow: hidden;
 		will-change: transform;
 		top: 0;
