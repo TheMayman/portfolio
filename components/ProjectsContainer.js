@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import ProjectCard from "./ProjectCard"
 import gsap from "gsap"
 
-const ProjectsContainer = () => {
+const ProjectsContainer = ({ getEndValue, setGetEndValue }) => {
 	const projectsData = [
 		{ id: 1, name: "Project 1" },
 		{ id: 2, name: "Project 2" },
@@ -13,21 +13,20 @@ const ProjectsContainer = () => {
 	]
 	const projectsContainerRef = useRef(null)
 	const latestProjectRef = useRef(null)
-	const [getEndValue, setGetEndValue] = useState()
+	// const [getEndValue, setGetEndValue] = useState()
 	const [projectLength, setProjectLength] = useState()
 
-	let q = gsap.utils.selector(projectsContainerRef)
-
 	useEffect(() => {
+		let q = gsap.utils.selector(projectsContainerRef)
 		let projects = q(".project_block")
 		setProjectLength(projects.length)
-        console.log(projects.length,"length");
+		console.log(projects.length, "length")
 		setGetEndValue(
 			projectsContainerRef.current.offsetHeight +
 				(window.innerHeight - projects[projects.length - 1].offsetHeight) -
 				window.innerHeight
 		)
-	}, [q])
+	}, [setGetEndValue])
 
 	return (
 		<div className="projects_wrap" id="lastest-projects" ref={latestProjectRef}>
@@ -39,7 +38,7 @@ const ProjectsContainer = () => {
 						index={index}
 						getEndValue={getEndValue}
 						projectsLength={projectsData.length}
-                        latestProjectRef={latestProjectRef}
+						latestProjectRef={latestProjectRef}
 					/>
 				))}
 			</div>

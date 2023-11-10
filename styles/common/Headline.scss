@@ -1,25 +1,10 @@
-// @keyframes animate-text {
-// 	from {
-// 		transform: translateX(0);
-// 	}
-
-// 	to {
-// 		transform: translateX(100%);
-// 	}
-// }
-
 .title-container {
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
   text-align: center;
 	margin-bottom: 5rem;
 	.title {
 		font-size: 15rem;
 		font-family: var(--font-gta);
 		letter-spacing: 6rem;
-    // transition: .4 all;
-    // animation-name: animate-text;
-    // animation-iteration-count: infinite;
+		padding-inline: 10rem;
 	}
 }

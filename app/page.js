@@ -33,7 +33,6 @@ export default async function Home() {
 					<Introduction />
 					<ProgrammingLanguages />
 					<Portfolio />
-					<ProjectsContainer />
 				</ScrollSmootherContainer>
 			</SmootherRefProvider>
 		</Hydrate>

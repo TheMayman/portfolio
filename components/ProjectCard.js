@@ -39,7 +39,6 @@ const ProjectCard = ({
 		if (window.innerWidth > 640) {
 			// if (!isTouch && window.innerWidth > 640) {
 			let cardsTL = new gsap.timeline()
-			let parallaxTL = new gsap.timeline()
 
 			// Scale / Opacity Animation
 			cardsTL
@@ -57,8 +56,8 @@ const ProjectCard = ({
 					el.current,
 					{
 						scale: function () {
-                            return 1 - ((projectsLength - index - 1) * 0.03)
-                        }
+							return 1 - (projectsLength - index - 1) * 0.03
+						},
 					},
 					0
 				)
@@ -74,20 +73,6 @@ const ProjectCard = ({
 				defaults: { ease: "none" },
 				// markers: true,
 			})
-
-			// Parallax
-			// parallaxTL.fromTo(q(".cover")[0], { scale: 1.5 }, { scale: 1 }, 0)
-
-			// ScrollTrigger.create({
-			// 	id: "parallax-" + index + identifier,
-			// 	invalidateOnRefresh: true,
-			// 	trigger: el.current,
-			// 	start: () => `-=${window.innerHeight}`,
-			// 	end: () => `+=${window.innerHeight * 2}`,
-			// 	animation: parallaxTL,
-			// 	scrub: 0.5,
-			// 	defaults: { ease: "none" },
-			// })
 
 			// Make the sticky effect
 			ScrollTrigger.create({

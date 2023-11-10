@@ -1,4 +1,8 @@
 .portfolio {
+  .header-pinned {
+    position: relative;
+    z-index: 100;
+  }
 	.card {
 		height: calc(80vh - 7rem);
 		background-color: red;
