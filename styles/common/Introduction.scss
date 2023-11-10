@@ -47,15 +47,18 @@
 	}
 }
 
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
 	.introduction-section {
 		display: flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		position: relative;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
 		margin-top: 7rem;
-		padding: 0;
+		padding: 0 4rem;
 		.left,
 		.right {
 			width: 50%;
@@ -83,7 +86,7 @@
 					line-height: 2rem;
 					width: 80%;
 					.headline-word {
-						transform: translateY(175px);
+						transform: translateY(195px);
 						transition: transform 0.5s;
 					}
 				}

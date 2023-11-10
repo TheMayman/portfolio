@@ -1,6 +1,6 @@
 header {
 	position: fixed;
-	top: 0;
+	top: 3rem;
 	left: 0;
 	right: 0;
 	width: 100%;
@@ -49,9 +49,9 @@ header {
 		display: none !important;
 	}
 }
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
 	header {
-		top: 3em;
+		top: 0em;
 		padding: 2rem;
 		.logo-container {
 			width: 10%;

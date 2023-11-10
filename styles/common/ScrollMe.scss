@@ -1,8 +1,9 @@
 .scroll-me {
   display: none;
 }
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
   .scroll-me {
+    display: block;
     position: absolute;
     top: calc(100vh - 7rem);
     transform: translateY(calc(-100% - 2rem));
