@@ -1,6 +1,6 @@
 .enquire_section {
 	.enq_sides {
-		background: #fff;
+		background: $white;
 		border-radius: 1.25em;
 		overflow: hidden;
 		will-change: transform;
@@ -85,7 +85,7 @@
 							}
 							.input_btn {
 								&:hover {
-									color: #fff;
+									color: $white;
 									background: #000;
 								}
 							}

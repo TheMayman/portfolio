@@ -29,7 +29,7 @@
 		}
 		&.light {
 			&::before {
-				background: #fff;
+				background: $white;
 			}
 		}
 	}
@@ -71,7 +71,7 @@
 }
 
 .arrows_set.solid {
-	background: #fff;
+	background: $white;
 	color: #000;
 }
 
@@ -90,11 +90,11 @@
 }
 
 .arrows_set:hover {
-	border-color: #fff;
+	border-color: $white;
 }
 
 .arrows_set:not(.solid):hover:before {
-	background: #fff;
+	background: $white;
 }
 
 .arrows_set .rounded_button:before {

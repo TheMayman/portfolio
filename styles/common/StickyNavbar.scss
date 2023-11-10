@@ -8,7 +8,7 @@
 	border-radius: 1000em;
 	overflow: hidden;
 	will-change: transform;
-	color: #fff;
+	color: $white;
 	backface-visibility: hidden;
 	transform-origin: top right;
 	&:not(.light) {
@@ -109,7 +109,7 @@
 			&::before {
 				content: "";
 				z-index: 99;
-				background: #fff;
+				background: $white;
 				position: absolute;
 				top: 0;
 				right: 0;
