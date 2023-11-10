@@ -13,7 +13,7 @@ const Portfolio = () => {
 	useEffect(() => {
 		ctx.add(() => {})
 		let cards = cardsRef.current.children
-    let tl = new gsap.timeline()
+		let tl = new gsap.timeline()
 
 		console.log(cards)
 
@@ -32,17 +32,17 @@ const Portfolio = () => {
 		for (let i = 0; i < cards.length; i++) {
 			var scale = 1 - (cards.length - i) * 0.025
 			let scaleDown = tl.to(cards[i], {
-				y: 0,
+				scale: scale,
 				autoAlpha: 1,
-				// "transform-origin": '"50% ' + (lastCardST.start + stickDistance) + '"',
+				"transform-origin": '"50% ' + (lastCardST.start + stickDistance) + '"',
 			})
 
 			ScrollTrigger.create({
 				trigger: cards[i],
-				start: "center center",
+				start: "top top",
 				end: () => lastCardST.start + stickDistance,
 				pin: true,
-        scrub:true,
+				scrub: true,
 				markers: true,
 				pinSpacing: false,
 				ease: "power3.in",

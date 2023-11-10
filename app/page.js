@@ -9,6 +9,7 @@ import SmootherRefProvider from "@/contexts/SmootherRefContext"
 import ProgrammingLanguages from "@/components/common/ProgrammingLanguages"
 import Portfolio from "@/components/common/Portfolio"
 import Loading from "@/components/common/Loading"
+import ProjectsContainer from "@/components/ProjectsContainer"
 
 async function getUser() {
 	const res = await fetch(
@@ -32,6 +33,7 @@ export default async function Home() {
 					<Introduction />
 					<ProgrammingLanguages />
 					<Portfolio />
+					<ProjectsContainer />
 				</ScrollSmootherContainer>
 			</SmootherRefProvider>
 		</Hydrate>

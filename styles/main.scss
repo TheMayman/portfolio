@@ -653,3 +653,46 @@ body {
 		margin-top: 3em;
 	}
 }
+
+.project_block_set .pin-spacer {
+	pointer-events: none;
+}
+.project_cover {
+	position: absolute;
+	width: 62.183908%;
+	height: 100%;
+	right: 0;
+	overflow: hidden;
+	will-change: transform;
+	border-radius: 1.25em;
+}
+
+.project_cover > i {
+	will-change: transform;
+}
+.project_block {
+	transform-origin: center -100%;
+}
+.project_block_set:not(:last-child) .project_block {
+	padding-bottom: 10em;
+	will-change: transform;
+}
+.project_block {
+	margin-top: -12.8em;
+	padding-top: 12.8em;
+}
+
+.project_box {
+	height: 43.000em;
+	background: #fff;
+	border-radius: 1.250em;
+	pointer-events: all;
+	position: relative;
+	overflow: hidden;
+	will-change: transform;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+.projects_wrap{
+	padding: 4rem;
+	margin-top: 15rem;
+}
