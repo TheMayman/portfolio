@@ -16,7 +16,7 @@ const ProjectCard = ({
 	const el = useRef()
 	let q = gsap.utils.selector(el)
 
-	console.log(projectsLength, "project length")
+	console.log(latestProjectRef.current, "project")
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger)
@@ -66,7 +66,7 @@ const ProjectCard = ({
 				id: "animation-" + index,
 				invalidateOnRefresh: true,
 				trigger: el.current,
-				start: "0% 0%",
+				start: "0% 30%",
 				end: () => `+=${el.current.offsetHeight / 1.5}`,
 				animation: cardsTL,
 				scrub: 0.5,
@@ -79,15 +79,16 @@ const ProjectCard = ({
 				id: "sticky-" + index,
 				invalidateOnRefresh: true,
 				trigger: el.current,
-				start: "0% 0%",
+				start: "0% 30%",
 				endTrigger: latestProjectRef.current,
 				end: () => `${getEndValue}`,
 				pinSpacing: false,
 				pin: true,
 				scrub: 0.5,
+				// markers: true,
 			})
 		}
-	}, [getEndValue, index, latestProjectRef, projectsLength, q])
+	}, [getEndValue, index, latestProjectRef, projectsLength,q])
 
 	return (
 		<div className={`project_block_set `}>

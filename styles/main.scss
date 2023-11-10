@@ -674,18 +674,18 @@ body {
 	transform-origin: center -100%;
 }
 .project_block_set:not(:last-child) .project_block {
-	padding-bottom: 10em;
+	padding-bottom: 10rem;
 	will-change: transform;
 }
-.project_block {
-	margin-top: -12.8em;
-	padding-top: 12.8em;
-}
+// .project_block {
+// 	margin-top: -12.8rem;
+// 	padding-top: 12.8rem;
+// }
 
 .project_box {
-	height: 43.000em;
+	height: 40rem;
 	background: #fff;
-	border-radius: 1.250em;
+	border-radius: 1.250rem;
 	pointer-events: all;
 	position: relative;
 	overflow: hidden;
@@ -693,6 +693,6 @@ body {
 	border: 1px solid rgba(0,0,0,0.1);
 }
 .projects_wrap{
-	padding: 4rem;
-	margin-top: 15rem;
+	// padding: 4rem;
+	// margin-top: 15rem;
 }
