@@ -1,8 +1,13 @@
 .scroll-me {
-  position: absolute;
-  top: calc(100vh - 7rem);
-  transform: translateY(calc(-100% - 2rem));
-  width: 5rem ;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
+}
+@media (min-width: 1024) {
+  .scroll-me {
+    position: absolute;
+    top: calc(100vh - 7rem);
+    transform: translateY(calc(-100% - 2rem));
+    width: 5rem ;
+    opacity: 0;
+    visibility: hidden;
+  }  
 }

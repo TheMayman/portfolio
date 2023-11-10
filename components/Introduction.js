@@ -85,8 +85,10 @@ const Introduction = () => {
 		<section className="introduction-section" ref={introRef}>
 			<div className="left pl-6">
 				<div className="headline">
-					<h2 className="headline-title">Hi,</h2>
-					<h2 className="headline-title">I&apos;m Eyad Alasfahani</h2>
+					<h1>
+						<div className="headline-title">Hi,</div>
+						<div className="headline-title">I&apos;m Eyad Alasfahani</div>
+					</h1>
 					<p className="headline-description">
 						A passionate web developer specializing in creating dynamic web
 						applications from scratch. With expertise in both frontend and

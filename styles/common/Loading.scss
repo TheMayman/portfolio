@@ -12,9 +12,14 @@
 	align-items: center;
 	justify-content: center;
 	font-family: var(--font-gta);
-	font-size: 10rem;
+	font-size: 4rem;
 	transition: background-color 0.2s;
   .loading {
     overflow: hidden;
   }
+}
+@media (min-width: 1024) {
+	.loading-container {
+		font-size: 10rem;
+	}
 }

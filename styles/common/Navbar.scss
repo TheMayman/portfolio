@@ -7,8 +7,8 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 2rem;
-	transition: cubic-bezier(0.165, 0.84, 0.44, 1) .7s all;
+	padding: 1rem 2rem;
+	transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.7s all;
 	z-index: 101;
 	height: 7rem;
 	&.sticky {
@@ -18,7 +18,7 @@ header {
 		}
 	}
 	.logo-container {
-		width: 10%;
+		width: 30%;
 		a {
 			width: 100%;
 			height: 2.5rem;
@@ -34,10 +34,9 @@ header {
 		cursor: pointer;
 		color: $gold;
 		border-radius: 50%;
-		padding: 1rem;
 		// box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-		transition: .3s all;
+		transition: 0.3s all;
 	}
 	.burger-magintizer,
 	.logo-container {
@@ -49,7 +48,16 @@ header {
 	#pageMenu {
 		display: none !important;
 	}
+}
+@media (min-width: 1024) {
 	header {
 		top: 3em;
+		padding: 2rem;
+		.logo-container {
+			width: 10%;
+		}
+		.burger-container {
+			padding: 1rem;
+		}
 	}
 }

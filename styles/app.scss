@@ -58,6 +58,7 @@ body {
 	scroll-behavior: smooth;
 	font-family: var(--font-oswald);
 	// min-height: 200vh;
+	overflow-x: hidden;
 	color: $white;
 	& *::-webkit-scrollbar {
 		display: none;
@@ -89,8 +90,8 @@ body.no-scroll {
 }
 
 section {
-	min-height: calc(100vh - 7rem);
-	padding: 4rem 0;
+	// min-height: calc(100vh - 7rem);
+	padding: 2rem 0;
 }
 
 .cursor {
@@ -126,7 +127,12 @@ section {
 // 	}
 // }
 
-// @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+	section {
+		min-height: calc(100vh - 7rem);
+		padding: 4rem 0;
+	}
+}
 // 	html {
 // 		font-size: 10px;
 // 	}
