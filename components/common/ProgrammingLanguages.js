@@ -23,9 +23,9 @@ const ProgrammingLanguages = () => {
 			})
 
 			ScrollTrigger.create({
+				id: "programming-languages-trigger",
 				trigger: ".lang",
 				animation: tl,
-				// markers: true,
 				scrub: true,
 				start: "top 80%",
 				end: "bottom 30%",
@@ -36,6 +36,7 @@ const ProgrammingLanguages = () => {
 
 		return () => {
 			ctx.revert()
+			ScrollTrigger.getById("programming-languages-trigger")?.kill()
 		}
 	}, [ctx])
 

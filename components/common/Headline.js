@@ -43,7 +43,7 @@ const Headline = ({ text }) => {
 
 	return (
 		<div className="title-container" ref={titleRef}>
-			<Marquee play={startMarquee} autoFill={false}>
+			<Marquee pauseOnHover play={startMarquee} autoFill={false}>
 				<h2 className="title">{text}</h2>
 			</Marquee>
 		</div>

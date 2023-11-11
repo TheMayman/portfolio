@@ -5,14 +5,39 @@ import gsap from "gsap"
 
 const ProjectsContainer = ({ getEndValue, setGetEndValue }) => {
 	const projectsData = [
-		{ id: 1, name: "Project 1" },
-		{ id: 2, name: "Project 2" },
-		{ id: 3, name: "Project 2" },
-		{ id: 4, name: "Project 2" },
-		{ id: 5, name: "Project 2" },
+		{
+			id: 1,
+			name: "AutoConnect Ford KSA",
+			description:
+				"Connect with customers online to drive sales and increase customer loyalty to unprecedented levels.",
+		},
+		{
+			id: 2,
+			name: "AutoConnect Ford KSA",
+			description:
+				"Connect with customers online to drive sales and increase customer loyalty to unprecedented levels.",
+		},
+		{
+			id: 3,
+			name: "AutoConnect Ford KSA",
+			description:
+				"Connect with customers online to drive sales and increase customer loyalty to unprecedented levels.",
+		},
+		{
+			id: 4,
+			name: "AutoConnect Ford KSA",
+			description:
+				"Connect with customers online to drive sales and increase customer loyalty to unprecedented levels.",
+		},
+		{
+			id: 5,
+			name: "AutoConnect Ford KSA",
+			description:
+				"Connect with customers online to drive sales and increase customer loyalty to unprecedented levels.",
+		},
 	]
 	const projectsContainerRef = useRef(null)
-	const latestProjectRef = useRef(null)
+	const projectsWrapperRef = useRef(null)
 	// const [getEndValue, setGetEndValue] = useState()
 	const [projectLength, setProjectLength] = useState()
 
@@ -20,7 +45,6 @@ const ProjectsContainer = ({ getEndValue, setGetEndValue }) => {
 		let q = gsap.utils.selector(projectsContainerRef)
 		let projects = q(".project_block")
 		setProjectLength(projects.length)
-		console.log(projects.length, "length")
 		setGetEndValue(
 			projectsContainerRef.current.offsetHeight +
 				(window.innerHeight - projects[projects.length - 1].offsetHeight) -
@@ -29,16 +53,17 @@ const ProjectsContainer = ({ getEndValue, setGetEndValue }) => {
 	}, [setGetEndValue])
 
 	return (
-		<div className="projects_wrap" id="lastest-projects" ref={latestProjectRef}>
+		<div className="projects_wrap" ref={projectsWrapperRef}>
 			<div className="projects_container" ref={projectsContainerRef}>
 				{projectsData.map((project, index) => (
 					<ProjectCard
 						key={project.id}
 						name={project.name}
+						description={project.description}
 						index={index}
 						getEndValue={getEndValue}
 						projectsLength={projectsData.length}
-						latestProjectRef={latestProjectRef}
+						projectsWrapperRef={projectsWrapperRef}
 					/>
 				))}
 			</div>

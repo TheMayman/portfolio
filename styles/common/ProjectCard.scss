@@ -1,0 +1,64 @@
+// .project_block_set .pin-spacer {
+// 	pointer-events: none;
+
+// }
+.project_block_set {
+	margin-bottom: 5rem;
+	.pin-spacer {
+		pointer-events: none;
+	}
+	.project_box {
+		width: 90%;
+		margin: 0 auto;
+		height: 40rem;
+		pointer-events: all;
+		position: relative;
+		background-color: $black;
+		border: 1px solid $white;
+		border-radius: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.left,
+		.right {
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+			background-color: $white;
+		}
+		.left {
+			width: 40%;
+			border-top-left-radius: 1rem;
+			border-bottom-left-radius: 1rem;
+			color: $black;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding-left: 3rem;
+			padding-top: 10vh;
+			.project-description-container {
+				margin-bottom: 3vh;
+				.project-name {
+					font-family: var(--font-oswald);
+					font-size: 1.2rem;
+				}
+			}
+			.image-logo-container {
+				position: absolute;
+				width: 5rem;
+				height: 5rem;
+				top: 0;
+				left: 1rem;
+			}
+		}
+		.right {
+			width: 60%;
+			border-top-right-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+			img {
+				transition: 2s all;
+			}
+		}
+	}
+}

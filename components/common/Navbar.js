@@ -21,7 +21,7 @@ const Navbar = ({ burgerTL, menuCardsRef }) => {
 			smootherRef.current.paused(true)
 		} else {
 			smootherRef.current.paused(false)
-			gsap.to(menuCardsRef.current, { duration: 0.2, autoAlpha: 0 })
+			let showMenuCardsTween = gsap.to(menuCardsRef.current, { duration: 0.2, autoAlpha: 0 })
 			burgerTL.current.reverse()
 		}
 	}
@@ -39,11 +39,13 @@ const Navbar = ({ burgerTL, menuCardsRef }) => {
 		}
 
 		ScrollTrigger.create({
+			id: "sticky-navbar",
 			onUpdate: () => handleStickyNavbar(),
 			start: "0% 0%",
 			end: "max",
 		})
 		return () => {
+			ScrollTrigger.getById("sticky-navbar").kill()
 			clearTimeout(scrollYTimeoutRef.current)
 		}
 	}, [start])

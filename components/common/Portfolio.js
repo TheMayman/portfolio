@@ -12,11 +12,8 @@ const Portfolio = () => {
 	const ctx = useGsapContext(cardsRef)
 	const [getEndValue, setGetEndValue] = useState()
 
-	gsap.registerPlugin(ScrollTrigger)
-	let q = gsap.utils.selector(sectionRef)
-
 	useEffect(() => {
-		gsap.timeline()
+		gsap.registerPlugin(ScrollTrigger)
 		ctx.add(() => {
 			ScrollTrigger.create({
 				id: "header-pinned",
@@ -31,6 +28,8 @@ const Portfolio = () => {
 
 		return () => {
 			ctx.revert()
+			if (ScrollTrigger.getById("header-pinned"))
+				ScrollTrigger.getById("header-pinned").kill()
 		}
 	}, [ctx, getEndValue])
 
