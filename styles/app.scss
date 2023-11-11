@@ -9,6 +9,7 @@
 @import "../styles/common/Portfolio.scss";
 @import "../styles/common/Loading.scss";
 @import "../styles/common/ProjectCard.scss";
+@import "../styles/common/Button.scss";
 
 @keyframes fade-and-slide-in {
 	from {
@@ -79,6 +80,7 @@ h5 {
 
 p {
 	font-family: var(--font-oswald);
+	line-height: 1.5;
 }
 
 a {

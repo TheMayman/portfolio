@@ -25,7 +25,7 @@ export default async function Home() {
 
 	return (
 		<Hydrate state={dehydratedState}>
-			<Cursor />
+			{/* <Cursor /> */}
 			<Loading />
 			<SmootherRefProvider>
 				<NavMenu />

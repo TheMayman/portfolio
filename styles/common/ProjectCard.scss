@@ -38,11 +38,54 @@
 			padding-left: 3rem;
 			padding-top: 10vh;
 			.project-description-container {
-				margin-bottom: 3vh;
-				.project-name {
+				margin-bottom: 5vh;
+				.project-description-label {
 					font-family: var(--font-oswald);
+					font-weight: 400;
+					margin-bottom: 2vh;
 					font-size: 1.2rem;
 				}
+				p {
+					font-family: var(--font-oswald);
+					font-weight: 200;
+					font-size: 1.2rem;
+				}
+			}
+			.skills-icons {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				.icon {
+					position: relative;
+					width: 2.5rem;
+					height: 2.5rem;
+					margin-right: 2rem;
+					filter: grayscale(1);
+					&::after {
+						content: "";
+						background-color: $black;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						position: absolute;
+						right: -1rem;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 5px;
+						height: 5px;
+						border-radius: 50%;
+					}
+					&:last-child::after {
+						display: none;
+					}
+				}
+			}
+			.button {
+				// margin-top: 3rem;
+				margin-right: 3rem;
+			}
+			.button:last-child {
+				margin-right: 0;
 			}
 			.image-logo-container {
 				position: absolute;
