@@ -10,6 +10,7 @@ import ProgrammingLanguages from "@/components/common/ProgrammingLanguages"
 import Portfolio from "@/components/common/Portfolio"
 import Loading from "@/components/common/Loading"
 import ProjectsContainer from "@/components/ProjectsContainer"
+import ContactMe from "@/components/common/ContactMe"
 
 async function getUser() {
 	const res = await fetch(
@@ -33,6 +34,7 @@ export default async function Home() {
 					<Introduction />
 					<ProgrammingLanguages />
 					<Portfolio />
+					<ContactMe />
 				</ScrollSmootherContainer>
 			</SmootherRefProvider>
 		</Hydrate>

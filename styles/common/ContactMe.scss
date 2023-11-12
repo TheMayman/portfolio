@@ -1,0 +1,12 @@
+.contact-me {
+	margin-top: 10rem;
+	.contact-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+		.left,
+		.right {
+			width: 50%;
+		}
+	}
+}

@@ -42,9 +42,7 @@ const Portfolio = () => {
 				setGetEndValue={setGetEndValue}
 				getEndValue={getEndValue}
 			/>
-			<section></section>
-			<section></section>
-			<section></section>
+			{/* <section></section> */}
 		</section>
 	)
 }
