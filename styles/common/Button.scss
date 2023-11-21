@@ -27,7 +27,7 @@
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	background: transparent !important;
+	background: $white !important;
 	z-index: 10;
   position: relative;
 }
@@ -46,7 +46,7 @@
 }
 
 .button:hover {
-	border: 1px solid #071982;
+	border: 1px solid #ffff;
 	color: $white !important;
 }
 .button::before {

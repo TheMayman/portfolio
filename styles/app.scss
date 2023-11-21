@@ -132,6 +132,12 @@ section {
 // }
 
 @media (min-width: 1024px) {
+	h3 {
+		font-size: 3.5rem;
+	}
+	label {
+		font-size: 1.2rem;
+	}
 	section {
 		min-height: calc(100vh - 7rem);
 		padding: 4rem 0;

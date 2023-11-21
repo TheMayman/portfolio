@@ -3,7 +3,7 @@ import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import { useEffect, useRef, useState } from "react"
-import Lottie from "lottie-react"
+import Lottie from "lottie-web"
 import programmerAnimation from "../public/json/programmer.json"
 import FadeIn from "./common/FadeIn"
 import useGsapContext from "./common/useGsapContext"
@@ -11,9 +11,25 @@ import ScrollMe from "./common/ScrollMe"
 
 const Introduction = () => {
 	const introRef = useRef()
+	const lottieRef = useRef()
 	const [isLoading, setIsLoading] = useState(true)
+	const [animation, setAnimation] = useState()
+
 	gsap.registerPlugin(SplitText, ScrollTrigger)
 	const ctx = useGsapContext(introRef)
+
+	useEffect(() => {
+		let animation = Lottie.loadAnimation({
+			container: lottieRef.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			path: "/json/programmer.json",
+		})
+
+		setAnimation(animation)
+		return () => {}
+	}, [])
 
 	useEffect(() => {
 		setIsLoading(false)
@@ -101,11 +117,7 @@ const Introduction = () => {
 				</div>
 			</div>
 			<div className="right">
-				<div className="lottie-container">
-					<Lottie
-						className="lottie-programmer"
-						animationData={programmerAnimation}
-					/>
+				<div className="lottie-container" ref={lottieRef}>
 				</div>
 			</div>
 			<ScrollMe />

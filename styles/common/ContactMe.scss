@@ -1,12 +1,96 @@
 .contact-me {
 	margin-top: 10rem;
 	.contact-me-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		position: relative;
+		svg {
+			z-index: -1;
+		}
+		svg.left-svg {
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: rotate(-45deg) translateY(-450px);
+			rect {
+				width: 500px;
+				height: 500px;
+				fill: $gold;
+				stroke-width: 3;
+				stroke: $gold;
+			}
+		}
+		svg.right-svg {
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			transform: rotate(45deg) translateX(400px);
+			rect {
+				width: 500px;
+				height: 500px;
+				fill: $gold;
+				stroke-width: 3;
+				stroke: $gold;
+			}
+		}
 		.left,
 		.right {
 			width: 50%;
+			z-index: 10;
+		}
+		.left {
+			padding: 0 4rem;
+			.form-container {
+				margin-top: 5rem;
+				.title {
+					margin-bottom: 3rem;
+				}
+				.sub-title {
+					margin-bottom: 3rem;
+					width: 80%;
+				}
+				form {
+					width: 80%;
+					.form-group {
+						margin: 0 auto;
+						margin-bottom: 1.5rem;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						gap: 3rem;
+						&.full {
+							width: 100%;
+						}
+						.form-control {
+							width: 50%;
+							&.full {
+								width: 100%;
+							}
+							label {
+								display: block;
+								margin-bottom: 1rem;
+							}
+							input,textarea {
+								background: transparent;
+								border: none;
+								border-bottom: 1px solid $white;
+								width: 100%;
+								color: $white;
+								&:focus {
+									outline: none;
+									border-bottom: 1px solid $gold;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
